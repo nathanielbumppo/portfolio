@@ -1,0 +1,131 @@
+@keyframes spinningH {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.cube {
+position: relative;
+margin: 0 auto;
+height: 160px;
+width: 160px;
+transition: transform 2s linear;
+transform-style: preserve-3d;
+animation: spinningH 15s infinite linear;
+
+@include sm {
+  height: 220px;
+  width: 220px;
+}
+
+@include xl {
+  height: 280px;
+  width: 280px;
+}
+
+  & > div {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    padding: 20px;
+    opacity: 0.9;
+    background-position:center center;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-repeat : no-repeat;
+    background-size: 80%;
+
+    @include sm {
+      height: 220px;
+      width: 220px;
+    }
+
+    @include xl {
+      height: 280px;
+      width: 280px;
+    }
+  }
+
+  div {
+    &:nth-child(1) {
+      transform: translateZ(90px);
+      background-image: url(../images/html5.png);
+
+      @include sm {
+        transform: translateZ(130px);
+      }
+      
+      @include xl {
+        transform: translateZ(160px);
+      }
+    }
+
+    &:nth-child(2) {
+      transform: rotateY(90deg) translateZ(90px);
+      background-image: url(../images/css3.png);
+
+      @include sm {
+        transform: rotateY(90deg) translateZ(130px);
+      }
+
+      @include xl {
+        transform: rotateY(90deg) translateZ(160px);
+      }
+    }
+
+    &:nth-child(3) {
+      transform: rotateY(180deg) translateZ(90px);
+      background-image: url(../images/js.png); 
+      
+      @include sm {
+        transform: rotateY(180deg) translateZ(130px);
+      }
+      
+      @include xl {
+        transform: rotateY(180deg) translateZ(160px);
+      }
+    }
+
+    &:nth-child(4) {
+      transform: rotateY(-90deg) translateZ(90px);
+      background-image: url(../images/vue.png); 
+
+      @include sm {
+        transform: rotateY(-90deg) translateZ(130px);
+      }
+
+      @include xl {
+        transform: rotateY(-90deg) translateZ(160px);
+      }  
+    }
+
+    &:nth-child(5) {
+      transform: rotateX(-90deg) translateZ(90px) rotate(180deg);
+      background-image: url(../images/react.png);   
+
+      @include sm {
+        transform: rotateX(-90deg) translateZ(130px) rotate(180deg);
+      }
+
+      @include xl {
+        transform: rotateX(-90deg) translateZ(160px) rotate(180deg);
+      }
+    }
+
+    &:nth-child(6) {
+      transform: rotateX(90deg) translateZ(90px);
+      background-image: url(../images/typescript.png);
+
+      @include sm {
+        transform: rotateX(90deg) translateZ(130px);
+      }
+
+      @include xl {
+        transform: rotateX(90deg) translateZ(160px);
+      }
+    }
+  }
+}

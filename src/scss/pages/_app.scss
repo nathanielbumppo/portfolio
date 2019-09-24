@@ -1,0 +1,36 @@
+.app {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	background: #252627;
+	overflow-y: auto;
+	position: relative;
+
+	&__page-container {
+		width: 100%;
+		padding-top: 60px;
+
+		@include lg {
+			padding-top: 0;
+			padding-left: 60px;
+		}
+	}
+}
+
+body {
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+		background-color: #252627;
+	}
+	
+	&::-webkit-scrollbar {
+		width: 14px;
+		background-color: #252627;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		box-shadow: inset 0 0 6px #08fdd8;
+		background-color: #181818;
+	}
+}

@@ -1,0 +1,137 @@
+//animations
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+//rubber-letters
+.rubber {
+  &:hover {
+    color: $skyblue;
+    animation: rubberBand 1s ease-out;
+    animation-iteration-count: infinite;
+  }
+}
+
+
+// loader
+.loader-transition-appear {
+  transform: translateX(-100%);
+}
+.loader-transition-appear-active {
+  transform: translateX(0);
+  transition: transform 400ms linear;
+}
+.loader-transition-enter {
+  transform: translateX(0);
+}
+.loader-transition-enter-done {
+  transform: translateX(100%);
+  transition: transform 400ms linear;
+}
+
+//page show
+.show-component-appear-active {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+}
+
+.show-component-exit-active {
+  animation-name: zoomOut;
+  animation-duration: 1s;
+}
+
+//bigA
+.fade-in-enter {
+  opacity: 0;
+}
+.fade-in-enter-active {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+.fade-in-enter-done {
+  opacity: 1 !important;
+}
+
+// letter-transition
+.letter-transition-enter {
+  opacity: 0;
+}
+.letter-transition-enter-active {
+  opacity: 1;
+  transition: opacity 50ms ease-out;
+}
+.letter-transition-exit-done {
+  opacity: 1 !important;
+}

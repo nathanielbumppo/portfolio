@@ -1,0 +1,157 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  @include lg {
+    flex-direction: row;
+  }
+  
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    z-index: 1;
+
+    @include sm {
+      margin-bottom: 30px;
+    }
+    @include lg {
+      align-items: flex-start;
+      height: 100%;
+      margin-bottom: 0px;
+    }
+
+    @include lg {
+      padding-right: 72px;
+    }
+    
+    @include xl {
+      padding-right: 90px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 2.5em;
+    font-weight: 900;
+    user-select: none;
+    margin-bottom: 10px;
+    text-align: center;
+
+    @include sm {
+      font-size: 4em;
+    }
+
+    @include lg {
+      text-align: start;
+    }
+
+    @include xl {
+      font-size: 5em;
+    }
+    
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    img {
+      width: 31px;
+      height: auto;
+      transform: translateY(2px);
+      object-fit: cover;
+      opacity: 0;
+
+      @include sm {
+        width: 46px;
+      }
+
+      @include xl {
+        width: 58px;
+      }
+    }
+  }
+  
+  &__subtitle {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #8d8d8d;
+    letter-spacing: 3px;
+    font-style: italic;
+    margin-bottom: 25px;
+    user-select: none;
+
+    @include sm {
+      font-size: 1.2em;
+    }
+
+    @include xl {
+      font-size: 1.5em;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    user-select: none;
+
+    @include lg {
+      justify-content: flex-end;
+      height: 100%;
+    }
+  }
+
+  &__logo-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 220px;
+    transform: translateX(12%);
+    overflow: hidden;
+
+    @include sm {
+      width: 220px;
+      height: 350px;
+    }
+
+    @include lg {
+      width: 280px;
+      height: 400px;
+      transform: none;
+    }
+
+    @include xl {
+      width: 350px;
+      height: 500px;
+    }
+
+    img, svg {
+      position: absolute;
+      left: 0;
+      bottom: 50%;
+      transform: translateY(50%);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    svg {
+      z-index: 1;
+    }
+
+    img {
+      opacity: 0;
+      z-index: 2;
+    }
+  }
+}

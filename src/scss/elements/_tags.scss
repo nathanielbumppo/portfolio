@@ -1,0 +1,83 @@
+.tags {
+  position: absolute;
+  display: inline;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 18px;
+  color: #515152;
+  user-select: none;
+
+  @include sm {
+    font-size: 24px;
+  }
+
+  &--title-top {
+    display: none;
+    top: -12px;
+    left: 3px;
+
+    @include lg {
+      display: inline;
+    }
+  }
+
+  &--title-bottom {
+    display: none;
+    bottom: 4px;
+    right: -60px;
+
+    @include lg {
+      display: inline;
+    }
+
+    @include xl {
+      bottom: 8px;
+    }
+  }
+
+  &--body-top {
+    top: 20px;
+    left: 20px;
+
+    @include xl {
+      left: 35px;
+    }
+  }
+
+  &--body-bottom {
+    bottom: 55px;
+    left: 20px;
+
+    @include xl {
+      left: 35px;
+    }
+  }
+
+  &--html-bottom {
+    bottom: 20px;
+    left: 10px;
+
+    @include xl {
+      left: 20px;
+    }
+  }
+
+  &--about-top {
+    display: none;
+    top: -20px;
+    left: 0;
+
+    @include lg {
+      display: inline;
+    }
+  }
+
+  &--about-bottom {
+    display:none;
+    bottom: -30px;
+    left: 0;
+
+    @include lg {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,237 @@
+.toolbar {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: #181818;
+  padding-right: 20px;
+
+  @include lg {
+    width: 60px;
+    height: 100vh;
+    padding-bottom: 20px;
+    padding-right: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    @include lg {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #070707;
+    padding: 8px;
+    user-select: none;
+    overflow: hidden;
+    margin-right: 20px;
+
+    @include lg {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    img {
+      display: block;
+      width: 35px;
+      height: auto;
+      object-fit: cover;
+
+      @include lg {
+        margin-bottom: 8px;
+      }
+    }
+
+    span {
+      display: none;
+
+      @include lg {
+        display: block;
+      }
+    }
+  }
+
+  &__logo-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__navbar {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px;
+    background: #181818;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+    &.is-active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @include md {
+      position: static;
+      width: auto;
+      height: auto;
+      justify-content: flex-start;
+      background: transparent;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    @include lg {
+      flex-direction: column;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  }
+
+  &__navbar-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+    user-select: none;
+
+    @include lg {
+      width: 100%;
+      height: 50px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &> * {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.is-active {
+      svg {
+        fill: $skyblue;
+      }
+    }
+
+    &:hover {
+      span {
+        opacity: 1;
+      }
+      svg {
+        opacity: 0;
+      }
+    }
+
+    span {
+      font-size: 11px;
+      text-align: center;
+      font-weight: 300;
+      color: $skyblue;
+      opacity: 0;
+      transition: opacity .3s ease-out;
+    }
+    
+    svg {
+      width: 28px;
+      height: 28px;
+      transition: opacity .3s ease-out;
+    }
+  }
+
+  &__social {
+    display: none;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+
+    @include md {
+      display: flex;
+    }
+    
+    @include lg {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 100%;
+      user-select: none;
+
+      @include lg {
+        width: 100%;
+        height: 30px;
+      }
+
+      &:hover {
+        svg {
+          fill: $skyblue;
+        }
+      }
+
+      svg {
+        width: 15px;
+        height: 15px;
+        fill: #4d4d4e;
+        transition: fill .3s ease-out;
+      }
+    }
+  }
+
+  &__menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    @include md {
+      display: none;
+    }
+
+    &.is-active {
+      svg {
+        fill: $skyblue;
+      }
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+      transform: fill .3s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  &__title {
+    position: relative;
+    font-size: 2em;
+    font-weight: 900;
+    color: $skyblue;
+    user-select: none;
+    margin-bottom: 50px;
+    text-align: center;
+
+    @include sm {
+      font-size: 3em;
+    }
+
+    @include lg {
+      text-align: left;
+    }
+    
+    @include xl {
+      font-size: 4em;
+    }
+
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+}

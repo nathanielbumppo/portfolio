@@ -1,0 +1,110 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  @include lg {
+    flex-direction: row;
+  }
+  
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+    @include sm {
+      margin-bottom: 30px;
+    }
+
+    @include lg {
+      align-items: flex-start;
+      margin-bottom: 0;
+      padding-right: 30px;
+      width: calc(100% - 460px);
+    }
+
+    @include xl {
+      width: calc(100% - 560px);
+    }
+  }
+
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    width: 320px;
+    height: 320px;
+
+    @include sm {
+      width: 460px;
+      height: 460px;
+    }
+
+    @include xl {
+      width: 560px;
+      height: 460px;
+    }
+  }
+  
+  &__title {
+    position: relative;
+    font-size: 2em;
+    font-weight: 900;
+    color: $skyblue;
+    user-select: none;
+    margin-bottom: 50px;
+    text-align: center;
+
+    @include sm {
+      font-size: 3em;
+    }
+
+    @include lg {
+      text-align: left;
+    }
+    
+    @include xl {
+      font-size: 4em;
+    }
+
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    width: 90%;
+    font-size: 0.8em;
+    font-weight: 300;
+    line-height: 170%;
+    user-select: none;
+    text-align: center;
+
+    @include sm {
+      width: 70%;
+      font-size: 0.9em;
+    }
+
+    @include lg {
+      width: 90%;
+      text-align: left;
+    }
+
+    @include xl {
+      font-size: 1em;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}

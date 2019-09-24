@@ -1,0 +1,52 @@
+.button {
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+	user-select: none;
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	outline: none;
+	z-index: 15;
+
+	&__content {
+		display: flex;
+		align-items: center;
+    justify-content: center;
+    text-align: center;
+		width: 100%;
+		height: 100%;
+		transition: background-color 0.2s ease-in-out;
+		letter-spacing: 0.05em;
+  }
+  
+  &--contact {
+    .button {
+      &__content {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        color: #08fdd8;
+        text-decoration: none;
+        padding: 5px 8px;
+        border: 1px solid #08fdd8;
+        border-radius: 3px;
+        text-transform: uppercase;
+        transition: all .3s ease-in-out;
+
+        @include sm {
+          font-size: 12px;
+          padding: 8px 12px;
+        }
+      }
+    }
+    &:hover {
+      .button {
+        &__content {
+          background-color: #08fdd8;
+          color: #252627;
+        }
+      }
+    }
+  }
+}

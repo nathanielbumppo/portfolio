@@ -1,0 +1,85 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #252627;
+  z-index: 2;
+  will-change: transform;
+  overflow: hidden;
+  user-select: none;
+
+  @include lg {
+    padding-left: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    max-width: 100%;
+    height: 160px;
+    text-align: center;
+
+    @include sm {
+      width: 400px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    user-select: none;
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    img {
+      display: block;
+      width: 35px;
+      height: auto;
+      margin-bottom: 8px;
+      object-fit: cover;
+    }
+  }
+
+  &__logo-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__message {
+    display: block;
+    font-size: 9px;
+    color: #8d8d8d;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+  }
+
+  &__progress-bar {
+    width: 100%;
+    height: 1px;
+  }
+
+  &__bar-bg {
+    height: 100%;
+    background: #047765;
+
+    div {
+      width: 0;
+      height: 100%;
+      transition: width 1s linear;
+      background: #08fdd8;
+    }
+  }
+}
