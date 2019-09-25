@@ -15,7 +15,7 @@ export const removeTask = id => ({
 export const completeTask = id => {
   if (id === 4) {
     const offer = prompt('You agree to accept me as a team? :)');
-    console.log(window);
+    if (offer === '') alert('Silence is consent :)');
     return (dispatch, getState, { getFirebase, getFirestore}) => {
       const firestore = getFirestore();
       firestore.collection('getjob').add({
