@@ -12,10 +12,28 @@ export const removeTask = id => ({
   id
 });
 
-export const completeTask = id => ({
-  type: COMPLETE_TASK,
-  id
-});
+export const completeTask = id => {
+  if (id === 4) {
+    const offer = prompt('You agree to accept me as a team? :)');
+    console.log(window);
+    return (dispatch, getState, { getFirebase, getFirestore}) => {
+      const firestore = getFirestore();
+      firestore.collection('getjob').add({
+        offer: offer,
+        createdAt: new Date(),
+      }).then(() => {
+        dispatch({ type: COMPLETE_TASK, id});
+      }).catch((err) => {
+        alert(err);
+      });
+    }
+  }
+  return {
+    type: COMPLETE_TASK,
+    id
+  }
+}
+  ;
 
 export const changeFilter = activeFilter => ({
   type: CHANGE_FILTER,

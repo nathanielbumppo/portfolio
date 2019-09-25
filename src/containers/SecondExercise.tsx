@@ -12,6 +12,14 @@ import ToDoList from '../components/todo/ToDoList';
 import ToDoFooter from '../components/todo/ToDoFooter';
 
 const mapStateToProps = ({tasks, filter}:any) => ({tasks, filter});
+const mapDispatchToProps = (dispatch:any) => {
+  return {
+    completeTask: (id:any) => dispatch(completeTask(id)),
+    addTask,
+    removeTask,
+    changeFilter,
+  }
+}
 
 function SecondExercise(props:any) {
   const [taskText, setTaskText] = useState('');
@@ -71,4 +79,4 @@ function SecondExercise(props:any) {
   );
 };
 
-export default connect(mapStateToProps, { addTask, removeTask, completeTask, changeFilter })(SecondExercise);
+export default connect(mapStateToProps, mapDispatchToProps)(SecondExercise);
