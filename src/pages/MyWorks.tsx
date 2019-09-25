@@ -54,7 +54,7 @@ function MyWork() {
           <div className="my-works__exercise">
             <h2 className="my-works__exercise-title">
               <a 
-                href="https://github.com/nathanielbumppo/portfolio/blob/master/src/containers/secondExercise/SecondExercise.tsx" 
+                href="https://github.com/nathanielbumppo/portfolio/blob/master/src/containers/SecondExercise.tsx" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >

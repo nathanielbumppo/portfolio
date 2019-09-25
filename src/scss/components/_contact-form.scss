@@ -7,6 +7,24 @@
 
     li {
       position: relative;
+
+      &.is-not-valid {
+        label {
+          &::before {
+            width: 100%;
+            background-color: red;
+          }
+        }
+      }
+
+      span {
+        position: absolute;
+        font-size: 11px;
+        font-weight: 300;
+        color: red;
+        bottom: -14px;
+        left: 5px;
+      }
     }
   }
 
@@ -30,14 +48,6 @@
     font-size: 16px;
     color: #8d8d8d;
     border: 0;
-
-    &:invalid {
-      & + label {
-        &::before {
-          background-color: red;
-        }
-      }
-    }
 
     &:focus {
       & + label {
@@ -76,42 +86,30 @@
   }
   
   &__name {
-    width: calc(50% - 5px);
+    width: calc(50% - 7.5px);
     height: 50px;
   }
 
   &__email {
-    width: calc(50% - 5px);
+    width: calc(50% - 7.5px);
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   &__subject {
     width: 100%;
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   &__message {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   &__submit {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-
-    &.is-not-valid {
-      button {
-        pointer-events: none;
-
-        span {
-          opacity: 0.7;
-          color: grey;
-          border-color: grey;
-        }
-      }
-    }
   }
 }

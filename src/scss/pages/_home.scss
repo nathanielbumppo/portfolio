@@ -67,6 +67,7 @@
       transform: translateY(2px);
       object-fit: cover;
       opacity: 0;
+      user-select: none;
 
       @include sm {
         width: 46px;
@@ -118,6 +119,7 @@
     height: 220px;
     transform: translateX(12%);
     overflow: hidden;
+    user-select: none;
 
     @include sm {
       width: 220px;
